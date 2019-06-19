@@ -1,12 +1,18 @@
-// Generated automatically by Perfect Assistant Application
-// Date: 2016-09-17 01:35:49 +0000
+// swift-tools-version:5.0
+
 import PackageDescription
 let package = Package(
     name: "LoremSwiftum",
-    targets: [],
+	products: [ .library(name: "LoremSwiftum", targets: ["LoremSwiftum"]) ],
     dependencies: [
-		.Package(url: "https://github.com/iamjono/SwiftRandom.git",majorVersion: 0, minor: 2),
-		.Package(url: "https://github.com/iamjono/SwiftString.git",majorVersion: 1, minor: 0)
+		.package(url: "https://github.com/providentiaww/SwiftRandom.git", from: "5.0.0"),
+		.package(url: "https://github.com/providentiaww/SwiftString.git", from: "5.0.0")
 	],
-    exclude: []
+    targets: [
+	.target (
+		name: "LoremSwiftum",
+		dependencies: ["SwiftRandom","SwiftString"],
+		path: ""
+	)
+	]
 )
